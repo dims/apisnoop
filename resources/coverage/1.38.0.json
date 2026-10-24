@@ -1194,6 +1194,22 @@
             "promotion_release": null
         },
         {
+            "file": null,
+            "test": "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+            "release": "1.38.0",
+            "testname": null,
+            "conformance_test": false,
+            "promotion_release": null
+        },
+        {
+            "file": null,
+            "test": "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
+            "release": "1.38.0",
+            "testname": null,
+            "conformance_test": false,
+            "promotion_release": null
+        },
+        {
             "file": "test/e2e/apimachinery/chunking.go",
             "test": "[sig-api-machinery] Servers with support for API chunking should return chunks of results for list calls [Conformance]",
             "release": "1.38.0",
@@ -1344,6 +1360,38 @@
             "testname": "watch-consistency",
             "conformance_test": true,
             "promotion_release": "1.15.0"
+        },
+        {
+            "file": null,
+            "test": "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+            "release": "1.38.0",
+            "testname": null,
+            "conformance_test": false,
+            "promotion_release": null
+        },
+        {
+            "file": null,
+            "test": "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+            "release": "1.38.0",
+            "testname": null,
+            "conformance_test": false,
+            "promotion_release": null
+        },
+        {
+            "file": null,
+            "test": "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+            "release": "1.38.0",
+            "testname": null,
+            "conformance_test": false,
+            "promotion_release": null
+        },
+        {
+            "file": null,
+            "test": "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
+            "release": "1.38.0",
+            "testname": null,
+            "conformance_test": false,
+            "promotion_release": null
         },
         {
             "file": "test/e2e/apps/controller_revision.go",
@@ -4323,7 +4371,7 @@
         },
         {
             "file": null,
-            "test": "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+            "test": "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
             "release": "1.38.0",
             "testname": null,
             "conformance_test": false,
@@ -4604,14 +4652,6 @@
         {
             "file": null,
             "test": "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-            "release": "1.38.0",
-            "testname": null,
-            "conformance_test": false,
-            "promotion_release": null
-        },
-        {
-            "file": null,
-            "test": "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
             "release": "1.38.0",
             "testname": null,
             "conformance_test": false,
@@ -7987,7 +8027,7 @@
         },
         {
             "file": null,
-            "test": "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+            "test": "[sig-storage] Flexvolumes should be mountable when non-attachable",
             "release": "1.38.0",
             "testname": null,
             "conformance_test": false,
@@ -10388,9 +10428,9 @@
     ],
     "release": "1.38.0",
     "sources": [
-        "https://prow.k8s.io/view/gcs/kubernetes-ci-logs/logs/ci-kubernetes-audit-kind-conformance/2106937430421540864",
-        "https://prow.k8s.io/view/gcs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gci-gce/2106988518512267264",
-        "https://prow.k8s.io/view/gcs/kubernetes-ci-logs/logs/ci-kubernetes-gce-conformance-latest/2106959828655017984"
+        "https://prow.k8s.io/view/gcs/kubernetes-ci-logs/logs/ci-kubernetes-audit-kind-conformance/2113921343241064448",
+        "https://prow.k8s.io/view/gcs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gci-gce/2113946508872126464",
+        "https://prow.k8s.io/view/gcs/kubernetes-ci-logs/logs/ci-kubernetes-gce-conformance-latest/2113900707227635712"
     ],
     "endpoints": [
         {
@@ -10501,10 +10541,11 @@
             "group": "",
             "level": "stable",
             "tests": [
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
                 null
             ],
             "action": "connect",
-            "tested": false,
+            "tested": true,
             "release": "1.38.0",
             "version": "v1",
             "category": "core",
@@ -10518,6 +10559,7 @@
             "group": "",
             "level": "stable",
             "tests": [
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-auth] ValidatingAdmissionPolicy can restrict access by-node",
                 "[sig-cli] Kubectl exec should be able to execute 1000 times in a container",
                 "[sig-network] DNS should support configurable pod DNS nameservers [Conformance]",
@@ -10542,7 +10584,6 @@
                 "[sig-network] Networking Granular Checks: Services should support basic nodePort: udp functionality",
                 "[sig-network] Networking Granular Checks: Services should update endpoints: http",
                 "[sig-network] Networking Granular Checks: Services should update endpoints: udp",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Ephemeral Containers should update the ephemeral containers in an existing pod [Conformance] [NodeConformance]",
                 "[sig-node] Ephemeral Containers will start an ephemeral container in an existing pod [Conformance] [NodeConformance]",
                 "[sig-node] ImageVolume should succeed with pod and pull policy of Always [LinuxOnly] [MinimumKubeletVersion:1.35] [Conformance]",
@@ -10610,7 +10651,7 @@
                 "[sig-storage] CSI Volumes [Driver: csi-hostpath] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should support two pods which have the same volume definition",
                 "[sig-storage] EmptyDir volumes pod should support memory backed volumes of specified size [LinuxOnly] [NodeConformance]",
                 "[sig-storage] EmptyDir volumes pod should support shared volumes between containers [Conformance]",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] In-tree Volumes [Driver: emptydir] [Testpattern: Inline-volume (default fs)] volumes should store data",
                 "[sig-storage] In-tree Volumes [Driver: hostPathSymlink] [Testpattern: Inline-volume (default fs)] volumes should store data",
                 "[sig-storage] In-tree Volumes [Driver: hostPath] [Testpattern: Inline-volume (default fs)] volumes should store data",
@@ -10779,6 +10820,8 @@
                 "[sig-api-machinery] Garbage collector should orphan pods created by rc if deleteOptions.OrphanDependents is nil",
                 "[sig-api-machinery] Garbage collector should orphan pods created by rc if delete options say so [Conformance] [Serial]",
                 "[sig-api-machinery] Garbage collector should orphan RS created by deployment when deleteOptions.PropagationPolicy is Orphan [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
                 "[sig-cli] Kubectl Port forwarding With a server listening on 0.0.0.0 should support forwarding over websockets",
                 "[sig-cli] Kubectl Port forwarding With a server listening on localhost should support forwarding over websockets",
                 "[sig-instrumentation] MetricsGrabber should grab all metrics from a ControllerManager.",
@@ -10926,7 +10969,8 @@
                 "[sig-network] Proxy version v1 should proxy logs on node with explicit kubelet port using proxy subresource",
                 "[sig-node] kubelet Clean up pods on node kubelet should be able to delete 10 pods per node in 1m0s.",
                 "[sig-node] Pods Extended Delete Grace Period should be submitted and removed",
-                "[sig-node] PreStop graceful pod terminated should wait until preStop hook completes the process"
+                "[sig-node] PreStop graceful pod terminated should wait until preStop hook completes the process",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable"
             ],
             "action": "connect",
             "tested": true,
@@ -12659,6 +12703,8 @@
                 "[sig-api-machinery] ServerSideApply should remove a field if it is owned but removed in the apply request",
                 "[sig-api-machinery] ServerSideApply should work for CRDs",
                 "[sig-api-machinery] ServerSideApply should work for subresources",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
                 "[sig-api-machinery] Servers with support for API chunking should return chunks of results for list calls [Conformance]",
                 "[sig-api-machinery] Servers with support for API chunking should support continue listing from the last key if the original version has been compacted away, though the list is inconsistent [Conformance] [Slow]",
                 "[sig-api-machinery] Servers with support for Table transformation should return a 406 for a backend which does not implement metadata [Conformance]",
@@ -12678,6 +12724,10 @@
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
                 "[sig-api-machinery] Watchers should observe an object deletion if it stops meeting the requirements of the selector [Conformance]",
                 "[sig-api-machinery] Watchers should receive events on concurrent watches in same order [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] ControllerRevision should manage the lifecycle of a ControllerRevision [Conformance] [Serial]",
                 "[sig-apps] CronJob should be able to schedule after more than 100 missed schedule",
                 "[sig-apps] CronJob should delete failed finished jobs with limit of one job",
@@ -13050,7 +13100,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-network] Topology Hints should distribute endpoints evenly",
                 "[sig-network] Traffic Distribution should route traffic correctly between pods on multiple nodes when using PreferClose",
@@ -13086,7 +13136,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -13508,7 +13557,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -13866,6 +13915,8 @@
                 "[sig-api-machinery] client-go should negotiate watch and report errors with accept \"application/vnd.kubernetes.protobuf,application/json\"",
                 "[sig-api-machinery] OrderedNamespaceDeletion namespace deletion should delete pod first [Conformance]",
                 "[sig-api-machinery] ResourceQuota should create a ResourceQuota and capture the life of a configMap. [Conformance]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
                 "[sig-api-machinery] Watchers should be able to restart watching from the last resource version observed by the previous watch [Conformance]",
                 "[sig-api-machinery] Watchers should be able to start watching from a specific resource version [Conformance]",
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
@@ -14303,6 +14354,10 @@
                 "[sig-api-machinery] ResourceQuota should verify ResourceQuota with terminating scopes. [Conformance]",
                 "[sig-api-machinery] ResourceQuota should verify ResourceQuota with terminating scopes through scope selectors.",
                 "[sig-api-machinery] Servers with support for Table transformation should return pod details",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] DisruptionController evictions: enough pods, absolute => should allow an eviction",
                 "[sig-apps] DisruptionController evictions: no PDB => should allow an eviction",
                 "[sig-apps] DisruptionController evictions: too few pods, absolute => should not allow an eviction",
@@ -14447,7 +14502,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-node] AppArmor load AppArmor profiles can disable an AppArmor profile, using unconfined",
                 "[sig-node] AppArmor load AppArmor profiles should enforce an AppArmor profile specified in annotations",
@@ -14473,7 +14528,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -14845,7 +14899,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -15526,7 +15580,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-node] Pods should contain environment variables for services [Conformance] [NodeConformance]",
                 null
@@ -19005,6 +19059,8 @@
                 "[sig-api-machinery] ServerSideApply should remove a field if it is owned but removed in the apply request",
                 "[sig-api-machinery] ServerSideApply should work for CRDs",
                 "[sig-api-machinery] ServerSideApply should work for subresources",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
                 "[sig-api-machinery] Servers with support for API chunking should return chunks of results for list calls [Conformance]",
                 "[sig-api-machinery] Servers with support for API chunking should support continue listing from the last key if the original version has been compacted away, though the list is inconsistent [Conformance] [Slow]",
                 "[sig-api-machinery] Servers with support for Table transformation should return a 406 for a backend which does not implement metadata [Conformance]",
@@ -19024,6 +19080,10 @@
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
                 "[sig-api-machinery] Watchers should observe an object deletion if it stops meeting the requirements of the selector [Conformance]",
                 "[sig-api-machinery] Watchers should receive events on concurrent watches in same order [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] ControllerRevision should manage the lifecycle of a ControllerRevision [Conformance] [Serial]",
                 "[sig-apps] CronJob should be able to schedule after more than 100 missed schedule",
                 "[sig-apps] CronJob should delete failed finished jobs with limit of one job",
@@ -19396,7 +19456,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-network] Topology Hints should distribute endpoints evenly",
                 "[sig-network] Traffic Distribution should route traffic correctly between pods on multiple nodes when using PreferClose",
@@ -19432,7 +19492,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -19854,7 +19913,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -20180,12 +20239,14 @@
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should honor timeout [Conformance]",
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should isolate connection pool by resolved backend IP address on pod restart",
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should mutate configmap [Conformance]",
-                "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should mutate custom resource with pruning [Conformance]",
+                "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should mutate custom resource [Conformance]",
+                "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should mutate custom resource with different stored version [Conformance]",
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should mutate everything except 'skip-me' configmaps [Conformance]",
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should mutate pod and apply defaults after mutation [Conformance]",
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should not be able to mutate or prevent deletion of webhook configuration objects [Conformance]",
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should unconditionally reject operations on fail closed webhook [Conformance]",
                 "[sig-api-machinery] ResourceQuota should create a ResourceQuota and capture the life of a configMap. [Conformance]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
                 "[sig-api-machinery] Watchers should be able to restart watching from the last resource version observed by the previous watch [Conformance]",
                 "[sig-api-machinery] Watchers should be able to start watching from a specific resource version [Conformance]",
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
@@ -20622,7 +20683,7 @@
                 "[sig-network] Services should serve a basic endpoint from pods [Conformance]",
                 "[sig-network] Services should serve endpoints on same port and different protocol for internal traffic on Type LoadBalancer",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-node] ConfigMap should be consumable as environment variable names with various prefixes [Conformance]",
                 "[sig-node] ConfigMap should be consumable via environment variable [Conformance] [NodeConformance]",
@@ -20913,7 +20974,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -21240,6 +21301,7 @@
             "tests": [
                 "[sig-api-machinery] ResourceQuota should be able to update and delete ResourceQuota. [Conformance]",
                 "[sig-api-machinery] ResourceQuota should create a ResourceQuota and capture the life of a custom resource.",
+                "[sig-storage] CSI Mock volume expansion CSI online volume expansion should expand volume without restarting pod if attach=off, nodeExpansion=on",
                 "[sig-storage] CSI Mock volume expansion Expansion with recovery recovery should be possible for node-only expanded volumes with final error",
                 "[sig-storage] CSI Mock volume expansion Expansion with recovery recovery should be possible for node-only expanded volumes with infeasible error",
                 "[sig-storage] CSI Mock volume expansion Expansion with recovery should allow recovery if controller expansion fails with final error",
@@ -21366,7 +21428,7 @@
                 "[sig-network] Services should serve a basic endpoint from pods [Conformance]",
                 "[sig-network] Services should serve endpoints on same port and different protocol for internal traffic on Type LoadBalancer",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 null
             ],
@@ -23083,6 +23145,7 @@
                 "[sig-node] [DRA] control plane supports external claim referenced by multiple pods",
                 "[sig-node] [DRA] control plane supports sharing a claim concurrently",
                 "[sig-node] [DRA] control plane supports simple pod referencing external resource claim",
+                "[sig-node] [DRA] control plane supports simple pod referencing inline resource claim",
                 "[sig-node] [DRA] control plane validate ResourceClaimTemplate and ResourceClaim for admin access",
                 "[sig-node] [DRA] CRUD Tests resource.k8s.io/v1 ResourceClaim [Conformance]",
                 null
@@ -25792,6 +25855,8 @@
                 "[sig-api-machinery] ServerSideApply should remove a field if it is owned but removed in the apply request",
                 "[sig-api-machinery] ServerSideApply should work for CRDs",
                 "[sig-api-machinery] ServerSideApply should work for subresources",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
                 "[sig-api-machinery] Servers with support for API chunking should return chunks of results for list calls [Conformance]",
                 "[sig-api-machinery] Servers with support for API chunking should support continue listing from the last key if the original version has been compacted away, though the list is inconsistent [Conformance] [Slow]",
                 "[sig-api-machinery] Servers with support for Table transformation should return a 406 for a backend which does not implement metadata [Conformance]",
@@ -25811,6 +25876,10 @@
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
                 "[sig-api-machinery] Watchers should observe an object deletion if it stops meeting the requirements of the selector [Conformance]",
                 "[sig-api-machinery] Watchers should receive events on concurrent watches in same order [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] ControllerRevision should manage the lifecycle of a ControllerRevision [Conformance] [Serial]",
                 "[sig-apps] CronJob should be able to schedule after more than 100 missed schedule",
                 "[sig-apps] CronJob should delete failed finished jobs with limit of one job",
@@ -26183,7 +26252,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-network] Topology Hints should distribute endpoints evenly",
                 "[sig-network] Traffic Distribution should route traffic correctly between pods on multiple nodes when using PreferClose",
@@ -26219,7 +26288,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -26641,7 +26709,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -27687,6 +27755,8 @@
                 "[sig-api-machinery] ServerSideApply should remove a field if it is owned but removed in the apply request",
                 "[sig-api-machinery] ServerSideApply should work for CRDs",
                 "[sig-api-machinery] ServerSideApply should work for subresources",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
                 "[sig-api-machinery] Servers with support for API chunking should return chunks of results for list calls [Conformance]",
                 "[sig-api-machinery] Servers with support for API chunking should support continue listing from the last key if the original version has been compacted away, though the list is inconsistent [Conformance] [Slow]",
                 "[sig-api-machinery] Servers with support for Table transformation should return a 406 for a backend which does not implement metadata [Conformance]",
@@ -27706,6 +27776,10 @@
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
                 "[sig-api-machinery] Watchers should observe an object deletion if it stops meeting the requirements of the selector [Conformance]",
                 "[sig-api-machinery] Watchers should receive events on concurrent watches in same order [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] ControllerRevision should manage the lifecycle of a ControllerRevision [Conformance] [Serial]",
                 "[sig-apps] CronJob should be able to schedule after more than 100 missed schedule",
                 "[sig-apps] CronJob should delete failed finished jobs with limit of one job",
@@ -28078,7 +28152,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-network] Topology Hints should distribute endpoints evenly",
                 "[sig-network] Traffic Distribution should route traffic correctly between pods on multiple nodes when using PreferClose",
@@ -28114,7 +28188,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -28536,7 +28609,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -29002,6 +29075,8 @@
                 "[sig-api-machinery] ServerSideApply should remove a field if it is owned but removed in the apply request",
                 "[sig-api-machinery] ServerSideApply should work for CRDs",
                 "[sig-api-machinery] ServerSideApply should work for subresources",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should partition LIST results across UID shards (3, 4, 5) with disjoint completeness, pagination, and ShardInfo echo [Beta]",
                 "[sig-api-machinery] Servers with support for API chunking should return chunks of results for list calls [Conformance]",
                 "[sig-api-machinery] Servers with support for API chunking should support continue listing from the last key if the original version has been compacted away, though the list is inconsistent [Conformance] [Slow]",
                 "[sig-api-machinery] Servers with support for Table transformation should return a 406 for a backend which does not implement metadata [Conformance]",
@@ -29021,6 +29096,10 @@
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
                 "[sig-api-machinery] Watchers should observe an object deletion if it stops meeting the requirements of the selector [Conformance]",
                 "[sig-api-machinery] Watchers should receive events on concurrent watches in same order [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] ControllerRevision should manage the lifecycle of a ControllerRevision [Conformance] [Serial]",
                 "[sig-apps] CronJob should be able to schedule after more than 100 missed schedule",
                 "[sig-apps] CronJob should delete failed finished jobs with limit of one job",
@@ -29393,7 +29472,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-network] Topology Hints should distribute endpoints evenly",
                 "[sig-network] Traffic Distribution should route traffic correctly between pods on multiple nodes when using PreferClose",
@@ -29429,7 +29508,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -29851,7 +29929,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -30518,7 +30596,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 null
             ],
             "action": "list",
@@ -30790,32 +30868,34 @@
             "level": "stable",
             "tests": [
                 "[sig-api-machinery] Aggregator Should be able to support the 1.17 Sample API Server using the current Aggregator [LinuxOnly] [Conformance]",
-                "[sig-cli] Kubectl client Simple pod should return command exit codes should handle in-cluster config",
-                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] provisioning should provision storage with mount options",
-                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] subPath should support file as subpath [LinuxOnly]",
+                "[sig-node] [FeatureGate:KubeletFineGrainedAuthz] when calling kubelet API check /healthz enpoint is accessible via nodes/healthz RBAC",
+                "[sig-node] [FeatureGate:KubeletFineGrainedAuthz] when calling kubelet API check /healthz enpoint is accessible via nodes/proxy RBAC",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] subPath should be able to unmount after the subpath directory is deleted [LinuxOnly]",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] subPath should support existing directories when readOnly specified in the volumeSource",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] subPath should support existing directory",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] subPath should support existing single file [LinuxOnly]",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] subPath should support readOnly directory specified in the volumeMount",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] volumes should allow exec of files on the volume",
                 "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (default fs)] volumes should store data",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Dynamic PV (filesystem volmode)] volumeMode should not mount / map unused volumes in a pod [LinuxOnly]",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Generic Ephemeral-volume (default fs) (immediate-binding)] ephemeral should create read-only inline ephemeral volume",
                 "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Generic Ephemeral-volume (default fs) (immediate-binding)] ephemeral should support expansion of pvcs created for ephemeral pvcs",
-                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should create read/write inline ephemeral volume",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should create read-only inline ephemeral volume",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should support expansion of pvcs created for ephemeral pvcs",
                 "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should support multiple inline ephemeral volumes",
-                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Inline-volume (default fs)] volumes should allow exec of files on the volume",
-                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Inline-volume (default fs)] volumes should store data",
+                "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Pre-provisioned PV (default fs)] volumes should allow exec of files on the volume",
                 "[sig-storage] In-tree Volumes [Driver: nfs3] [Testpattern: Pre-provisioned PV (default fs)] volumes should store data",
                 "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] provisioning should mount multiple PV pointing to the same storage on the same node",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] subPath should be able to unmount after the subpath directory is deleted [LinuxOnly]",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] subPath should support existing single file [LinuxOnly]",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] subPath should support readOnly directory specified in the volumeMount",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] subPath should support readOnly file specified in the volumeMount [LinuxOnly]",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] volumes should allow exec of files on the volume",
+                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] subPath should support file as subpath [LinuxOnly]",
+                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Dynamic PV (default fs)] volumes should store data",
                 "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (immediate-binding)] ephemeral should create read-only inline ephemeral volume",
+                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (immediate-binding)] ephemeral should create read/write inline ephemeral volume",
                 "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (immediate-binding)] ephemeral should support expansion of pvcs created for ephemeral pvcs",
+                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (immediate-binding)] ephemeral should support two pods which have the same volume definition",
                 "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should create read-only inline ephemeral volume",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should create read/write inline ephemeral volume",
                 "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should support expansion of pvcs created for ephemeral pvcs",
                 "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should support multiple inline ephemeral volumes",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Generic Ephemeral-volume (default fs) (late-binding)] ephemeral should support two pods which have the same volume definition",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Inline-volume (default fs)] volumes should allow exec of files on the volume",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Pre-provisioned PV (default fs)] volumes should store data",
-                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Pre-provisioned PV (filesystem volmode)] volumeMode should not mount / map unused volumes in a pod [LinuxOnly]",
+                "[sig-storage] In-tree Volumes [Driver: nfs] [Testpattern: Inline-volume (default fs)] volumes should store data",
                 null
             ],
             "action": "list",
@@ -32153,7 +32233,7 @@
                 "[sig-storage] CSI Volumes [Driver: csi-hostpath] [Testpattern: Dynamic PV (block volmode)] volumes should store data",
                 "[sig-storage] CSI Volumes [Driver: csi-hostpath] [Testpattern: Dynamic PV (default fs)] provisioning should provision storage with pvc data source",
                 "[sig-storage] CSI Volumes [Driver: csi-hostpath] [Testpattern: Dynamic PV (default fs)] volumes should store data",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] In-tree Volumes [Driver: hostPathSymlink] [Testpattern: Inline-volume (default fs)] volumes should store data",
                 "[sig-storage] In-tree Volumes [Driver: hostPath] [Testpattern: Inline-volume (default fs)] volumes should store data",
                 "[sig-storage] In-tree Volumes [Driver: local] [LocalVolumeType: blockfs] [Testpattern: Pre-provisioned PV (default fs)] volumes should store data",
@@ -32541,8 +32621,7 @@
             "group": "events.k8s.io",
             "level": "stable",
             "tests": [
-                "[sig-instrumentation] Events API should ensure that an event can be fetched, patched, deleted, and listed [Conformance]",
-                null
+                "[sig-instrumentation] Events API should ensure that an event can be fetched, patched, deleted, and listed [Conformance]"
             ],
             "action": "patch",
             "tested": true,
@@ -33943,6 +34022,7 @@
                 "[sig-auth] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] CRUD Tests certificates.k8s.io/v1 ClusterTrustBundles [MinimumKubeletVersion:1.37] [Conformance]",
                 "[sig-auth] Projected PodCertificate [FeatureGate:PodCertificateRequest] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] MaxExpirationSeconds validations should issue certificate with default life time (24h) when MaxExpirationSeconds is not set [MinimumKubeletVersion:1.37] [Conformance]",
                 "[sig-auth] Projected PodCertificate [FeatureGate:PodCertificateRequest] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] MaxExpirationSeconds validations should issue certificate with specified duration (1h) when MaxExpirationSeconds is set [MinimumKubeletVersion:1.37] [Conformance]",
+                "[sig-auth] Projected PodCertificate [FeatureGate:PodCertificateRequest] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] MaxExpirationSeconds validations should reject pod creation when MaxExpirationSeconds exceeds maximum (91d) [MinimumKubeletVersion:1.37] [Conformance]",
                 "[sig-auth] Projected PodCertificate [FeatureGate:PodCertificateRequest] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] should allow server and client pods to establish an mTLS connection [MinimumKubeletVersion:1.37] [Conformance]",
                 "[sig-auth] Projected PodCertificate [FeatureGate:PodCertificateRequest] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] should honor UserAnnotations for SPIFFE URI path [MinimumKubeletVersion:1.37] [Conformance]"
             ],
@@ -34491,6 +34571,10 @@
                 "[sig-api-machinery] ServerSideApply should create an applied object if it does not already exist",
                 "[sig-api-machinery] ServerSideApply should work for subresources",
                 "[sig-api-machinery] Servers with support for Table transformation should return pod details",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
+                "[sig-api-machinery] WebSocket streaming should attach over the WebSocket v5.channel.k8s.io subprotocol",
+                "[sig-api-machinery] WebSocket streaming should exec over the WebSocket v5.channel.k8s.io subprotocol with stdin close and exit code",
                 "[sig-apps] Daemon set should retry creating failed daemon pods [Conformance] [Serial]",
                 "[sig-apps] Deployment deployment should support proportional scaling [Conformance]",
                 "[sig-apps] Deployment RollingUpdateDeployment should delete old pods and create new ones [Conformance]",
@@ -34660,7 +34744,7 @@
                 "[sig-network] Services should serve endpoints on same port and different protocols [Conformance]",
                 "[sig-network] Services should serve multiport endpoints from pods [Conformance]",
                 "[sig-network] Services should support externalTrafficPolicy=Local for type=NodePort",
-                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints",
+                "[sig-network] Services should support named targetPorts that resolve to different ports on different endpoints [FutureConformance]",
                 "[sig-network] Services should work after the service has been recreated",
                 "[sig-node] AppArmor load AppArmor profiles can disable an AppArmor profile, using unconfined",
                 "[sig-node] AppArmor load AppArmor profiles should enforce an AppArmor profile specified in annotations",
@@ -34686,7 +34770,6 @@
                 "[sig-node] Containers should be able to override the image's default command (container entrypoint) [Conformance] [NodeConformance]",
                 "[sig-node] Containers should use the image defaults if command and args are blank [Conformance] [NodeConformance]",
                 "[sig-node] ContainerTerminationMetrics Validation should report terminated_containers_total metric",
-                "[sig-node] crictl [Provider:gce] should be able to run crictl on the node",
                 "[sig-node] Downward API should provide container's limits.cpu/memory and requests.cpu/memory as env vars [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide default limits.cpu/memory from node allocatable [Conformance] [NodeConformance]",
                 "[sig-node] Downward API should provide host IP and pod IP as an env var if pod uses host network [LinuxOnly] [NodeConformance]",
@@ -35033,7 +35116,7 @@
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : configmap",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : projected",
                 "[sig-storage] Ephemeralstorage When pod refers to non-existent ephemeral storage should allow deletion of pod with invalid volume : secret",
-                "[sig-storage] Flexvolumes [Provider:gce,local] should be mountable when non-attachable",
+                "[sig-storage] Flexvolumes should be mountable when non-attachable",
                 "[sig-storage] HostPath should give a volume the correct mode [LinuxOnly] [NodeConformance]",
                 "[sig-storage] HostPath should support r/w [NodeConformance]",
                 "[sig-storage] HostPath should support subPath [NodeConformance]",
@@ -35356,6 +35439,8 @@
                 "[sig-api-machinery] Garbage collector should orphan pods created by rc if deleteOptions.OrphanDependents is nil",
                 "[sig-api-machinery] Garbage collector should orphan pods created by rc if delete options say so [Conformance] [Serial]",
                 "[sig-api-machinery] Garbage collector should orphan RS created by deployment when deleteOptions.PropagationPolicy is Orphan [Conformance]",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on 0.0.0.0",
+                "[sig-api-machinery] WebSocket streaming port forwarding over the WebSocket tunnel should forward to a server listening on localhost",
                 "[sig-auth] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] should be able to mount a big number (>100) of CTBs [MinimumKubeletVersion:1.37] [Conformance]",
                 "[sig-auth] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] should be able to mount a single ClusterTrustBundle by name [MinimumKubeletVersion:1.37] [Conformance]",
                 "[sig-auth] [FeatureGate:ClusterTrustBundle] [FeatureGate:ClusterTrustBundleProjection] should be able to specify multiple CTB volumes [MinimumKubeletVersion:1.37] [Conformance]",
@@ -38140,6 +38225,7 @@
             "level": "stable",
             "tests": [
                 "[sig-api-machinery] AdmissionWebhook [Privileged:ClusterAdmin] should be able to deny pod and configmap creation [Conformance]",
+                "[sig-api-machinery] Server-Side Sharded List and Watch [FeatureGate:ShardedListAndWatch] should filter LIST and WATCH events by object.metadata.uid and object.metadata.namespace [Beta]",
                 "[sig-api-machinery] Watchers should be able to restart watching from the last resource version observed by the previous watch [Conformance]",
                 "[sig-api-machinery] Watchers should be able to start watching from a specific resource version [Conformance]",
                 "[sig-api-machinery] Watchers should observe add, update, and delete watch notifications on configmaps [Conformance]",
@@ -38366,7 +38452,8 @@
             "tests": [
                 "[sig-apps] Daemon set should retry creating failed daemon pods [Conformance] [Serial]",
                 "[sig-node] [DRA] control plane runs a pod without a generated resource claim",
-                "[sig-node] Pods should run through the lifecycle of Pods and PodStatus [Conformance]"
+                "[sig-node] Pods should run through the lifecycle of Pods and PodStatus [Conformance]",
+                null
             ],
             "action": "put",
             "tested": true,
@@ -39448,74 +39535,6 @@
         },
         {
             "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "post",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "createResourceV1beta1DeviceClass",
-            "conf_tested": false,
-            "description": "create a DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "post",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "createResourceV1beta1NamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "create a ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "post",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "createResourceV1beta1NamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "create a ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "post",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "createResourceV1beta1ResourceSlice",
-            "conf_tested": false,
-            "description": "create a ResourceSlice"
-        },
-        {
-            "kind": "DeviceClass",
             "path": "/apis/resource.k8s.io/v1beta2/deviceclasses",
             "group": "resource.k8s.io",
             "level": "beta",
@@ -39822,142 +39841,6 @@
         },
         {
             "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "deletecollection",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1CollectionDeviceClass",
-            "conf_tested": false,
-            "description": "delete collection of DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "deletecollection",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1CollectionNamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "delete collection of ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "deletecollection",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1CollectionNamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "delete collection of ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "deletecollection",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1CollectionResourceSlice",
-            "conf_tested": false,
-            "description": "delete collection of ResourceSlice"
-        },
-        {
-            "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "delete",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1DeviceClass",
-            "conf_tested": false,
-            "description": "delete a DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "delete",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1NamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "delete a ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "delete",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1NamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "delete a ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "delete",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "deleteResourceV1beta1ResourceSlice",
-            "conf_tested": false,
-            "description": "delete a ResourceSlice"
-        },
-        {
-            "kind": "DeviceClass",
             "path": "/apis/resource.k8s.io/v1beta2/deviceclasses",
             "group": "resource.k8s.io",
             "level": "beta",
@@ -40081,10 +39964,10 @@
             "group": "resource.k8s.io",
             "level": "beta",
             "tests": [
-                null
+                "[sig-node] [DRA] control plane supports simple pod referencing inline resource claim"
             ],
             "action": "delete",
-            "tested": false,
+            "tested": true,
             "release": "1.38.0",
             "version": "v1beta2",
             "category": "resource",
@@ -40276,23 +40159,6 @@
             "version": null,
             "category": "coordination",
             "endpoint": "getCoordinationV1beta1APIResources",
-            "conf_tested": false,
-            "description": "get available resources"
-        },
-        {
-            "kind": null,
-            "path": "/apis/resource.k8s.io/v1beta1/",
-            "group": null,
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": null,
-            "tested": false,
-            "release": "1.38.0",
-            "version": null,
-            "category": "resource",
-            "endpoint": "getResourceV1beta1APIResources",
             "conf_tested": false,
             "description": "get available resources"
         },
@@ -40499,108 +40365,6 @@
             "endpoint": "listCoordinationV1beta1NamespacedLeaseCandidate",
             "conf_tested": false,
             "description": "list or watch objects of kind LeaseCandidate"
-        },
-        {
-            "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "list",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "listResourceV1beta1DeviceClass",
-            "conf_tested": false,
-            "description": "list or watch objects of kind DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "list",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "listResourceV1beta1NamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "list or watch objects of kind ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "list",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "listResourceV1beta1NamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "list or watch objects of kind ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceclaims",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "list",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "listResourceV1beta1ResourceClaimForAllNamespaces",
-            "conf_tested": false,
-            "description": "list or watch objects of kind ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceclaimtemplates",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "list",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "listResourceV1beta1ResourceClaimTemplateForAllNamespaces",
-            "conf_tested": false,
-            "description": "list or watch objects of kind ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "list",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "listResourceV1beta1ResourceSlice",
-            "conf_tested": false,
-            "description": "list or watch objects of kind ResourceSlice"
         },
         {
             "kind": "DeviceClass",
@@ -40931,91 +40695,6 @@
         },
         {
             "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "patch",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "patchResourceV1beta1DeviceClass",
-            "conf_tested": false,
-            "description": "partially update the specified DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "patch",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "patchResourceV1beta1NamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "partially update the specified ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}/status",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "patch",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "patchResourceV1beta1NamespacedResourceClaimStatus",
-            "conf_tested": false,
-            "description": "partially update status of the specified ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "patch",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "patchResourceV1beta1NamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "partially update the specified ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "patch",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "patchResourceV1beta1ResourceSlice",
-            "conf_tested": false,
-            "description": "partially update the specified ResourceSlice"
-        },
-        {
-            "kind": "DeviceClass",
             "path": "/apis/resource.k8s.io/v1beta2/deviceclasses/{name}",
             "group": "resource.k8s.io",
             "level": "beta",
@@ -41322,91 +41001,6 @@
         },
         {
             "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "get",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "readResourceV1beta1DeviceClass",
-            "conf_tested": false,
-            "description": "read the specified DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "get",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "readResourceV1beta1NamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "read the specified ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}/status",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "get",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "readResourceV1beta1NamespacedResourceClaimStatus",
-            "conf_tested": false,
-            "description": "read status of the specified ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "get",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "readResourceV1beta1NamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "read the specified ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "get",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "readResourceV1beta1ResourceSlice",
-            "conf_tested": false,
-            "description": "read the specified ResourceSlice"
-        },
-        {
-            "kind": "DeviceClass",
             "path": "/apis/resource.k8s.io/v1beta2/deviceclasses/{name}",
             "group": "resource.k8s.io",
             "level": "beta",
@@ -41710,91 +41304,6 @@
             "endpoint": "replaceCoordinationV1beta1NamespacedLeaseCandidate",
             "conf_tested": false,
             "description": "replace the specified LeaseCandidate"
-        },
-        {
-            "kind": "DeviceClass",
-            "path": "/apis/resource.k8s.io/v1beta1/deviceclasses/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "put",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "replaceResourceV1beta1DeviceClass",
-            "conf_tested": false,
-            "description": "replace the specified DeviceClass"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "put",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "replaceResourceV1beta1NamespacedResourceClaim",
-            "conf_tested": false,
-            "description": "replace the specified ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaim",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaims/{name}/status",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "put",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "replaceResourceV1beta1NamespacedResourceClaimStatus",
-            "conf_tested": false,
-            "description": "replace status of the specified ResourceClaim"
-        },
-        {
-            "kind": "ResourceClaimTemplate",
-            "path": "/apis/resource.k8s.io/v1beta1/namespaces/{namespace}/resourceclaimtemplates/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "put",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "replaceResourceV1beta1NamespacedResourceClaimTemplate",
-            "conf_tested": false,
-            "description": "replace the specified ResourceClaimTemplate"
-        },
-        {
-            "kind": "ResourceSlice",
-            "path": "/apis/resource.k8s.io/v1beta1/resourceslices/{name}",
-            "group": "resource.k8s.io",
-            "level": "beta",
-            "tests": [
-                null
-            ],
-            "action": "put",
-            "tested": false,
-            "release": "1.38.0",
-            "version": "v1beta1",
-            "category": "resource",
-            "endpoint": "replaceResourceV1beta1ResourceSlice",
-            "conf_tested": false,
-            "description": "replace the specified ResourceSlice"
         },
         {
             "kind": "DeviceClass",
@@ -43905,9 +43414,9 @@
             "description": "replace the specified Workload"
         }
     ],
-    "release_date": "2026-10-05T07:08:08",
-    "total endpoints": 971,
-    "tested endpoints": 631,
+    "release_date": "2026-10-24T12:24:06",
+    "total endpoints": 937,
+    "tested endpoints": 633,
     "new conformance eligible endpoints": 0,
     "total conformance eligible endpoints": 602,
     "tested conformance eligible endpoints": 602,
